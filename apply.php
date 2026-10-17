@@ -3,7 +3,7 @@ declare(strict_types=1);
 session_start();
 require __DIR__ . '/config.php';
 
-function fail(string $message, int $status = 405): void {
+function fail(string $message, int $status = 400): void {
     http_response_code($status);
     $safeMessage = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
     echo '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">';
@@ -15,6 +15,7 @@ function fail(string $message, int $status = 405): void {
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405) ;
     header('Location: index.html');
     exit;
 }
