@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNIVERSITY OF KABIANGA | Hostel 6 Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-mark" aria-hidden="true">U<span>K</span></div>
+    <div>
+      <p class="eyebrow">STUDENT ACCOMMODATION</p>
+      <h1>UNIVERSITY OF KABIANGA</h1>
+      <h2>Hostel 6 Gentlemen's Accommodation Portal</h2>
+    </div>
+  </header>
+
+  <main class="page-layout">
+    <section class="welcome-card">
+      <span class="pill">HOSTEL 6 • APPLICATIONS</span>
+      <h3>Your accommodation application starts here.</h3>
+      <p>Welcome to Hostel 6! This application form is intended for gentlemen seeking accommodation. Please provide accurate personal details, complete all required fields, and submit your Application for review. Accommodation is subject to availability and approval by the hostel Administrator</p>
+      <div class="notice">
+        <strong>Before you submit</strong>
+        <span>Check that your registration number and phone number are correct. Submitting an application does not guarantee room allocation.</span>
+      </div>
+    </section>
+
+    <section class="form-card" aria-labelledby="form-heading">
+      <div class="form-heading">
+        <div>
+          <p class="eyebrow">HOSTEL 6</p>
+          <h3 id="form-heading">Accommodation Application</h3>
+        </div>
+        <span class="required-note">* Required fields</span>
+      </div>
+
+      <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+
+      <form id="applicationForm" action="apply.php" method="post">
+        <div class="field">
+          <label for="full_name">Full name <span>*</span></label>
+          <input id="full_name" name="full_name" type="text" autocomplete="name" maxlength="120" required placeholder="Enter your full name">
+        </div>
+
+        <div class="field">
+          <label for="registration_number">Registration Number <span>*</span></label>
+          <input id="registration_number" name="registration_number" type="text" maxlength="50" required placeholder="e.g. BSC/01/2026">
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="room_number">Room Number <span>*</span></label>
+            <input id="room_number" name="room_number" type="number" min="1" max="300" step="1" required placeholder="001–300">
+            <small>Enter a number from 1 to 300.</small>
+          </div>
+          <div class="field">
+            <label for="year_of_study">Year of Study <span>*</span></label>
+            <select id="year_of_study" name="year_of_study" required>
+              <option value="">Select year</option>
+              <option value="1">Year 1</option>
+              <option value="2">Year 2</option>
+              <option value="3">Year 3</option>
+              <option value="4">Year 4</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="phone_number">Phone Number <span>*</span></label>
+          <input id="phone_number" name="phone_number" type="tel" autocomplete="tel" maxlength="20" required placeholder="e.g. 07XXXXXXXX or +2547XXXXXXXX">
+        </div>
+
+        <div class="button-row">
+          <button type="button" class="button button-outline" id="applyButton">Apply</button>
+          <button type="submit" class="button button-primary">Submit Application <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="privacy-note">Your details will be sent to the university's application database for review.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="currentYear"></span> University of Kabianga · Hostel 6 Accommodation Portal</p>
+  </footer>
+</body>
+</html>
