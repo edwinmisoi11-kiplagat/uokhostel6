@@ -16,7 +16,7 @@ function fail(string $message, int $status = 400): void {
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405) ;
-    header('Location: index.html');
+    header('Allow: POST'||'Location: index.html');
     exit;
 }
 
